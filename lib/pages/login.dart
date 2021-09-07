@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+//underscore makes the class/field private. s helpful for security  
+class _LoginPageState extends State<LoginPage> {
+  @override
+  String name="";
+  bool flag=false;
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -17,6 +26,7 @@ class LoginPage extends StatelessWidget {
         body: Stack(
           children: <Widget>[
             Container(
+              //scroll view is a must for diff devies to function smoothly
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
@@ -31,7 +41,19 @@ class LoginPage extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: 0.5),
                       child: Center(
                         child: Text(
-                          "Welcome to",
+                          "Welcome $name",
+                          style: TextStyle(
+                              fontSize: 26,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                     Padding(
+                      padding: EdgeInsets.only(top:10,bottom: 0.5),
+                      child: Center(
+                        child: Text(
+                          "to",
                           style: TextStyle(
                               fontSize: 26,
                               color: Colors.black,
@@ -40,7 +62,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 5, bottom: 30),
+                      padding: EdgeInsets.only(top: 0, bottom: 30),
                       child: Center(
                         child: Text(
                           "Scoop a Cone",
@@ -60,8 +82,13 @@ class LoginPage extends StatelessWidget {
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(50.0),
                             ),
-                            labelText: 'Email',
-                            hintText: 'abc@xyz.com'),
+                            labelText: 'Name',
+                            hintText: 'Full Name'),
+                            onChanged: (value)
+                            {
+                              name=value;
+                              setState(() { });
+                            },
                       ),
                     ),
                     Padding(
@@ -87,24 +114,40 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                     ),
-                    Container(
-                      height: 40,
-                      width: 90,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(50)),
-                      child: TextButton(
-                        onPressed: () {
-                          print("clicked");
-                          // Navigator.push(
-                          //   context, MaterialPageRoute(builder: (_) => HomePage()));
-                        },
-                        child: Text(
-                          'Login',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                    InkWell(
+                       onTap:() async
+                       {
+                         //Navigator.pushNamed(context, MyRoutes.homeRoute);
+                         setState(() {
+                                flag=true;                    
+                                 });
+                         await Future.delayed(Duration(seconds: 1));
+                         Navigator.pushNamed(context, MyRoutes.homeRoute);
+                       },
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        height: 40,
+                        width: flag? 40:100,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            //shape: flag? BoxShape.circle: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(flag?60:8)
+                            ),
+                            
+                        // child: TextButton(
+                        //   onPressed: () {
+                        //     //navigator is used to move to diff class
+                        //     Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        //   },
+                          child: flag? Icon(Icons.done, color: Colors.white):Text(
+                            'Login',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+
+                          ),
                         ),
-                      ),
                     ),
+                    
                     SizedBox(
                       height: 130,
                     ),
