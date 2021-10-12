@@ -1,14 +1,7 @@
+import 'dart:convert';
+
 class IceCreamModel {
-  static final items = [
-    Item(
-        id: 1,
-        name: "Cup",
-        desc: "A cup of Icecream",
-        price: 10,
-        color: "#33505a",
-        image:
-            "https://images.unsplash.com/photo-1534706936160-d5ee67737249?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80")
-  ];
+  static List<Item> items;
 }
 
 class Item {
@@ -19,5 +12,87 @@ class Item {
   final String color;
   final String image;
 
-  Item({this.id, this.name, this.desc, this.price, this.color, this.image});
+  Item({
+    this.id,
+    this.name,
+    this.desc,
+    this.price,
+    this.color,
+    this.image,
+  });
+
+  Item copyWith({
+    int id,
+    String name,
+    String desc,
+    num price,
+    String color,
+    String image,
+  }) {
+    return Item(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      desc: desc ?? this.desc,
+      price: price ?? this.price,
+      color: color ?? this.color,
+      image: image ?? this.image,
+    );
+  }
+//dynamic since values of diff types
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'desc': desc,
+      'price': price,
+      'color': color,
+      'image': image,
+    };
+  }
+//factory use: since var iare final hence factory helps to run those with final keyword
+//Also, helps to select which constructor to use
+  factory Item.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return Item(
+      id: map['id'],
+      name: map['name'],
+      desc: map['desc'],
+      price: map['price'],
+      color: map['color'],
+      image: map['image'],
+    );
+  }
+  //gives map from class
+  String toJson() => json.encode(toMap());
+
+  factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
+  }
+
+  @override
+  bool operator ==(Object o) {
+    if (identical(this, o)) return true;
+
+    return o is Item &&
+        o.id == id &&
+        o.name == name &&
+        o.desc == desc &&
+        o.price == price &&
+        o.color == color &&
+        o.image == image;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        name.hashCode ^
+        desc.hashCode ^
+        price.hashCode ^
+        color.hashCode ^
+        image.hashCode;
+  }
 }
