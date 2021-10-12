@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Cup",
+            "desc": "A creamy sugar rush, grab one on the go, anywhere, anytime.",
+            "price": 10,
+            "color": "#33505a",
+            "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1308&q=80"
+        },
+        {
+            "id": 2,
+            "name": "Kulfi",
+            "desc": "Discover the richness of exotic fruits and nuts, neatly composed on a stick.",
+            "price": 15,
+            "color": "#00ac51",
+            "image": "https://images.unsplash.com/photo-1622821957347-3e924ab4c3d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+        },
+        {
+            "id": 3,
+            "name": "Ice Cream Cake",
+            "desc": " Whatever celebration our ice cream cakes never disappoint.",
+            "price": 100,
+            "color": "#e0bfae",
+            "image": "https://images.unsplash.com/photo-1562634185-94581bf444ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=451&q=80"
+        },
+        {
+            "id": 4,
+            "name": "Choco Bar",
+            "desc": "You’ll be spoilt for choices of our classic Chocobar.",
+            "price": 20,
+            "color": "#544ee4",
+            "image": "https://images.unsplash.com/photo-1570081457355-2c9dff2c816d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1335&q=80"
+        },
+        {
+            "id": 5,
+            "name": "Dollies",
+            "desc": "Explore the world of fruity delights with our wide range of enjoyable candy bars.",
+            "price": 10,
+            "color": "#e3e4e9",
+            "image": "https://images.unsplash.com/photo-1626123552395-655a55e77390?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        },
+        {
+            "id": 6,
+            "name": "Sundae",
+            "desc": "Try dodging this scrumptious spin of our range of Sundae desserts.",
+            "price": 150,
+            "color": "#f73984",
+            "image": "https://images.unsplash.com/photo-1514849302-984523450cf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+        },
+        {
+            "id": 7,
+            "name": "Cone",
+            "desc": "These delights are wrapped inside waffle cones along with nuts & confectioneries.",
+            "price": 20,
+            "color": "#1c1c1c",
+            "image": "https://images.unsplash.com/photo-1613489977845-8ec7e0ff3ae0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1379&q=80"
+        },
+        {
+            "id": 8,
+            "name": "IceCream Sandwich",
+            "desc": "Give a creamy twist to your parties with crunchy icecream sandwiches. ",
+            "price": 35,
+            "color": "#7c95eb",
+            "image": "https://images.unsplash.com/photo-1629731410452-79919cf59062?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80"
+        }
+    ]
+}
